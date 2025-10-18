@@ -54,4 +54,4 @@ That’s it 🎉
 🌐 Live Demo
 
 🔗 Hosted on Netlify:
-https://profile.netlify.app
+https://verdant-lollipop-628b48.netlify.app/
