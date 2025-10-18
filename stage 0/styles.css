@@ -1,0 +1,280 @@
+/* ==============================
+   General Styles
+============================== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #AF2655, #8B1C45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* ==============================
+   Profile Card
+============================== */
+.profile-card {
+    background: #F4CE14;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 320px;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================
+   Profile Picture
+============================== */
+.profile-picture {
+    position: relative;
+    margin: 0 auto 15px;
+    width: 110px;
+    height: 110px;
+    border: 4px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==============================
+   Typography
+============================== */
+.full-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0;
+    color: #AF2655;
+}
+
+.job-title {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.location, .email {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* ==============================
+   Social Links
+============================== */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #AF2655;
+    margin: 0 8px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8B1C45;
+}
+
+/* ==============================
+   Current Time
+============================== */
+.current-time {
+    font-size: 13px;
+    margin-top: 15px;
+    color: #333;
+    font-style: italic;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 400px) {
+    .profile-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile-picture {
+        width: 90px;
+        height: 90px;
+    }
+
+    .full-name {
+        font-size: 20px;
+    }
+
+    .job-title {
+        font-size: 16px;
+    }
+
+    .bio {
+        font-size: 14px;
+    }/* ==== GLOBAL STYLES ==== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #AF2655;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ==== PROFILE CARD ==== */
+.profile-card {
+    background: #F4CE14;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ==== PROFILE PICTURE ==== */
+.profile-picture {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* ==== TEXT STYLES ==== */
+.full-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+    color: #222;
+}
+
+.job-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.bio {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.location, .email {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* ==== SOCIAL LINKS ==== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #0073b1;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #005582;
+    transform: scale(1.1);
+}
+
+/* ==== CURRENT TIME ==== */
+.current-time {
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ==== HOBBIES & DISLIKES ==== */
+section {
+    margin-top: 15px;
+}
+
+section h3 {
+    font-size: 16px;
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section li {
+    font-size: 14px;
+    color: #222;
+    margin: 4px 0;
+}
+
+/* ==== RESPONSIVENESS ==== */
+@media (min-width: 600px) {
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 30px;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-card {
+        padding: 20px;
+    }
+
+    .bio {
+        font-size: 14px;
+    }
+
+    .social-links a {
+        font-size: 18px;
+    }
+}
+
+}
