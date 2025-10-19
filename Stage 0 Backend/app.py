@@ -1,67 +1,31 @@
 from flask import Flask, jsonify
 import requests
 from datetime import datetime, timezone
-from dotenv import load_dotenv
-from os import getenv 
-from flask_cors import CORS
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+import os
 
-# load environment variables
-load_dotenv()
-
-# create app
 app = Flask(__name__)
-CORS(app)
 
-# rate limiting
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["200 per day", "50 per hour"],
-    storage_uri="memory://",
-)
+@app.route("/me", methods=["GET"])
+def get_profile():
+    try:
+        res = requests.get("https://catfact.ninja/fact", timeout=5)
+        fact = res.json().get("fact", "No cat fact available.")
+    except Exception:
+        fact = "Could not fetch a cat fact at this time."
 
+    timestamp = datetime.now(timezone.utc).isoformat()
 
-@app.route('/')
-def index():
-    return 'Hello World!'
+    return jsonify({
+        "status": "success",
+        "user": {
+            "email": "zainabakinola2010@gmail.com",
+            "name": "Zainab Akinola",
+            "stack": "Python/Flask"
+        },
+        "timestamp": timestamp,
+        "fact": fact
+    })
 
-
-@app.route('/me')
-def me():
-    # get cat fact
-	try:
-		response = requests.get('https://catfact.ninja/fact', timeout=5)
-		if response.status_code != 200:
-			data = {
-				"status": "error",
-				"message": "Failed to fetch cat fact"
-			}
-			return jsonify(data), 500
-		else:
-			fact = response.json().get('fact')
-
-		# create response data
-		data = {
-			"status": "success",
-			"user": {
-				"email": "zainabakinola2010@gmail.com",
-				"name": "Zainab Akinola",
-				"stack": "Python/Flask"
-			},
-			"timestamp": datetime.now(timezone.utc).isoformat(),
-			"fact": fact
-		}
-		return jsonify(data), 200
-	except Exception as e:
-		data = {
-			"status": "error",
-			"message": str(e)
-		}
-		return jsonify(data), 500
-
-
-
-if __name__ == '__main__':
-    app.run(port=getenv('PORT', 5000))
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
