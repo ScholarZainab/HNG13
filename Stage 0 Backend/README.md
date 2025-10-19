@@ -40,8 +40,8 @@ virtualenv (optional but recommended)
 
 ## ⚙️ Setup & Installation
 - 1. Clone the Repository
-```git clone https://github.com/wiseman-umanah/CatAPI.git
-cd CatAPI
+```git clone  https://github.com/ScholarZainab/HNG13.git
+cd Stage 0 Backend
 ```
 
 - 2. Create a Virtual Environment
